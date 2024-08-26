@@ -61,7 +61,9 @@ if (!images[imagePath])
     const chatbox = document.getElementById("chatbox-dialog");
     const closeButton = document.getElementById("chatbox-close");
     const sendButton = document.getElementById("chatbox-send");
-    const inputField = document.getElementById("chatbox-input");
+    const inputField = document.getElementById(
+      "chatbox-input"
+    ) as HTMLInputElement;
     const messagesContainer = document.getElementById("chatbox-messages");
 
     const responses = [
@@ -71,6 +73,7 @@ if (!images[imagePath])
       "What can I do for you?",
       "Feel free to ask me anything.",
     ];
+
     if (
       !toggleButton ||
       !chatbox ||
@@ -80,6 +83,7 @@ if (!images[imagePath])
       !messagesContainer
     )
       return;
+
     toggleButton.addEventListener("click", () => {
       chatbox.classList.remove(
         "translate-y-full",

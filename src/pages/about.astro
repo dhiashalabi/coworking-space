@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import localBirdImage from "/src/assets/dhia.png";
 ---
 
 <Layout title="About Us">
@@ -32,8 +34,8 @@ import Header from "../components/Header.astro";
       <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-8">
         <div class="p-6 flex items-center">
           <div class="mr-6">
-            <img
-              src="/src/assets/dhia.png"
+            <Image
+              src={localBirdImage}
               alt="DHia' SHalabi"
               class="w-full h-64 object-contain rounded-lg border-4 border-gray-200 shadow-lg"
             />

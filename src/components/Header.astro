@@ -1,0 +1,45 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import data from "../data/navigation.json";
+
+interface Props {
+  imagePath: string;
+  menuPath: string;
+  altText: string;
+}
+
+const { imagePath, menuPath, altText } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif}"
+);
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  );
+if (!images[menuPath])
+  throw new Error(
+    `"${menuPath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  );
+---
+
+<header class="bg-gray-900 text-white shadow-lg">
+  <nav class="container mx-auto flex items-center p-4">
+    <div class="text-xl font-bold">CoWorking</div>
+    <Image src={images[imagePath]()} alt={altText} class="w-6 cursor-pointer" />
+    <ul class="flex gap-6 ml-10">
+      {
+        data.map((item) => (
+          <li>
+            <a href={item.url} class="hover:text-yellow-500 transition-colors">
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="ml-auto">
+      <Image src={images[menuPath]()} alt="menu" class="w-6 cursor-pointer" />
+    </div>
+  </nav>
+</header>

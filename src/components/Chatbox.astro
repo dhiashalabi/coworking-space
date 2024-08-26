@@ -1,0 +1,139 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  imagePath: string;
+  altText: string;
+}
+
+const { imagePath, altText } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/*.{jpeg,jpg,png,gif}"
+);
+if (!images[imagePath])
+  throw new Error(
+    `"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+  );
+---
+
+<div
+  id="chatbox-toggle"
+  class="fixed bottom-6 right-6 bg-yellow-500 w-14 h-14 rounded-full cursor-pointer shadow-lg flex items-center justify-center"
+>
+  <Image src={images[imagePath]()} alt={altText} class="w-2/3" />
+</div>
+
+<div
+  id="chatbox-dialog"
+  class="fixed bottom-24 right-6 bg-white w-80 h-96 rounded-lg shadow-lg p-4 flex flex-col transition-transform duration-300 transform translate-y-full opacity-0 pointer-events-none"
+>
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-lg font-semibold">Chatbot</h2>
+    <button id="chatbox-close" class="text-gray-500 hover:text-gray-700 text-lg"
+      >&times;</button
+    >
+  </div>
+  <div
+    id="chatbox-messages"
+    class="flex-1 overflow-hidden flex flex-col space-y-2"
+  >
+  </div>
+  <div class="mt-4 flex">
+    <input
+      id="chatbox-input"
+      type="text"
+      class="w-full border border-gray-300 rounded-l p-2"
+      placeholder="Type your message..."
+    />
+    <button
+      id="chatbox-send"
+      class="bg-yellow-500 text-white py-2 px-4 rounded-r"
+    >
+      Send
+    </button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.getElementById("chatbox-toggle");
+    const chatbox = document.getElementById("chatbox-dialog");
+    const closeButton = document.getElementById("chatbox-close");
+    const sendButton = document.getElementById("chatbox-send");
+    const inputField = document.getElementById("chatbox-input");
+    const messagesContainer = document.getElementById("chatbox-messages");
+
+    const responses = [
+      "How can I assist you today?",
+      "I'm here to help with anything you need!",
+      "Let me know if you have any questions.",
+      "What can I do for you?",
+      "Feel free to ask me anything.",
+    ];
+    if (
+      !toggleButton ||
+      !chatbox ||
+      !closeButton ||
+      !sendButton ||
+      !inputField ||
+      !messagesContainer
+    )
+      return;
+    toggleButton.addEventListener("click", () => {
+      chatbox.classList.remove(
+        "translate-y-full",
+        "opacity-0",
+        "pointer-events-none"
+      );
+      chatbox.classList.add("translate-y-0", "opacity-100");
+    });
+
+    closeButton.addEventListener("click", () => {
+      chatbox.classList.remove("translate-y-0", "opacity-100");
+      chatbox.classList.add(
+        "translate-y-full",
+        "opacity-0",
+        "pointer-events-none"
+      );
+    });
+
+    sendButton.addEventListener("click", () => {
+      const message = inputField.value.trim();
+      if (message) {
+        const userMessageElement = document.createElement("div");
+        userMessageElement.className =
+          "p-2 max-w-xs bg-yellow-100 text-gray-800 rounded-lg self-end text-right transition-transform duration-300 transform translate-x-full";
+        userMessageElement.textContent = message;
+        messagesContainer.appendChild(userMessageElement);
+
+        setTimeout(
+          () => userMessageElement.classList.remove("translate-x-full"),
+          100
+        );
+        inputField.value = "";
+
+        setTimeout(() => {
+          const response =
+            responses[Math.floor(Math.random() * responses.length)];
+          const responseElement = document.createElement("div");
+          responseElement.className =
+            "p-2 max-w-xs bg-gray-200 text-gray-800 rounded-lg self-start text-left opacity-0 transition-opacity duration-300";
+          responseElement.textContent = response;
+          messagesContainer.appendChild(responseElement);
+
+          setTimeout(() => responseElement.classList.remove("opacity-0"), 100);
+
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }, 500);
+      }
+    });
+
+    inputField.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        sendButton.click();
+      }
+    });
+  });
+</script>

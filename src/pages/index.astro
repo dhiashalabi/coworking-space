@@ -1,0 +1,31 @@
+---
+import Header from "../components/Header.astro";
+import MainContent from "../components/MainContent.astro";
+import Chatbox from "../components/Chatbox.astro";
+import data from "../data/spaces.json";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Home" />
+<Header
+  imagePath="/src/assets/pin.png"
+  menuPath="/src/assets/burger.png"
+  altText="location"
+/>
+<main class="container mx-auto py-10">
+  <h1 class="text-4xl font-semibold mb-8 text-center">
+    The best coworking spaces for lazy devs.
+  </h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-5">
+    {
+      data.map((item) => (
+        <MainContent
+          imagePath={item.imagePath}
+          altText={item.altText}
+          description={item.description}
+        />
+      ))
+    }
+  </div>
+  <Chatbox imagePath="/src/assets/message.png" altText="chatbox" />
+</main>

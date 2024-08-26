@@ -1,20 +1,69 @@
-# Astro Starter Kit: Basics
+# Co-Working Space Website
 
-```sh
-npm create astro@latest -- --template basics
-```
+Welcome to the Co-Working Space website! This project is a modern, responsive website built using Astro, designed to showcase the features and services of a co-working space. The website includes pages for Home, About, and Contact, and features a clean, user-friendly interface.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Features
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Modern Design**: Clean and responsive layout tailored for a co-working space.
+- **Home Page**: Overview of the co-working space with featured sections.
+- **About Page**: Information about the team and mission.
+- **Contact Page**: Contact form with toast notifications for successful submissions.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Demo
 
-## 🚀 Project Structure
+![Co-Working Space Demo](images/demo.png)
 
-Inside of your Astro project, you'll see the following folders and files:
+## Live Demo
+
+Check out the live demo of the Co-Working Space website [here](https://yourwebsite.example.com).
+
+## Technologies Used
+
+- **Astro**: For building the website with a modern, optimized framework.
+- **Tailwind CSS**: For styling and responsive design.
+- **Font Awesome**: For social media icons.
+
+## Getting Started
+
+To get started with this project locally, follow these steps:
+
+1. **Clone the repository**:
+
+   ```sh
+   git clone https://github.com/yourusername/co-working-space.git
+   ```
+
+2. **Navigate to the project directory**:
+
+   ```sh
+   cd co-working-space
+   ```
+
+3. **Install dependencies**:
+
+   ```sh
+   npm install
+   ```
+
+4. **Run the development server**:
+
+   ```sh
+   npm run dev
+   ```
+
+   Open your browser and go to `http://localhost:4321` to view the website.
+
+5. **Build for production**:
+
+   ```sh
+   npm run build
+   ```
+
+   The production build will be available in the `./dist/` directory.
+
+## Code Overview
+
+### Project Structure
 
 ```text
 /
@@ -22,33 +71,38 @@ Inside of your Astro project, you'll see the following folders and files:
 │   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   └── Card.astro
+│   │   └── TeamMember.astro
 │   ├── layouts/
 │   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── about.astro
+│   │   └── contact.astro
 └── package.json
+
+- `public/`: Contains static assets like images and favicon.
+- `src/`: Contains the source code for the website.
+- `components/`: Reusable components like `TeamMember`.
+- `layouts/`: Layout components like `Layout` for wrapping pages.
+- `pages/`: Individual pages like `index`, `about`, and `contact`.
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Pages
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- Home (index.astro): Displays an overview of the co-working space.
+- About (about.astro): Provides information about the team and the mission.
+- Contact (contact.astro): Contains a contact form with toast notifications.
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Styles
 
-## 🧞 Commands
+- Tailwind CSS: Utilized for responsive design and modern UI.
 
-All commands are run from the root of the project, from a terminal:
+### Future Enhancements
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- Add more interactive elements to the Home page.
+- Enhance the Contact page with real-time form validation.
+- Integrate a blog or news section for updates.
 
-## 👀 Want to learn more?
+## License
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This project is open-source and available under the [MIT License](LICENSE).

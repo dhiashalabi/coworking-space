@@ -9,13 +9,9 @@ Welcome to the Co-Working Space website! This project is a modern, responsive we
 - **About Page**: Information about the team and mission.
 - **Contact Page**: Contact form with toast notifications for successful submissions.
 
-## Demo
-
-![Co-Working Space Demo](images/demo.png)
-
 ## Live Demo
 
-Check out the live demo of the Co-Working Space website [here](https://yourwebsite.example.com).
+Check out the live demo of the Co-Working Space website [here](https://coworking-space.dhiashalabi.info).
 
 ## Technologies Used
 

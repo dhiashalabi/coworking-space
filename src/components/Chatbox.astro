@@ -26,13 +26,16 @@ if (!images[imagePath])
 
 <div
   id="chatbox-dialog"
-  class="fixed bottom-24 right-6 bg-white w-80 h-96 rounded-lg shadow-lg p-4 flex flex-col transition-transform duration-300 transform translate-y-full opacity-0 pointer-events-none"
+  class="fixed bottom-24 right-6 w-80 h-96 rounded-lg shadow-lg p-4 flex flex-col transition-transform duration-300 transform translate-y-full opacity-0 pointer-events-none bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
 >
   <div class="flex justify-between items-center mb-4">
     <h2 class="text-lg font-semibold">Chatbot</h2>
-    <button id="chatbox-close" class="text-gray-500 hover:text-gray-700 text-lg"
-      >&times;</button
+    <button
+      id="chatbox-close"
+      class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 text-lg"
     >
+      &times;
+    </button>
   </div>
   <div
     id="chatbox-messages"
@@ -43,12 +46,12 @@ if (!images[imagePath])
     <input
       id="chatbox-input"
       type="text"
-      class="w-full border border-gray-300 rounded-l p-2"
+      class="w-full border border-gray-300 rounded-l p-2 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200"
       placeholder="Type your message..."
     />
     <button
       id="chatbox-send"
-      class="bg-yellow-500 text-white py-2 px-4 rounded-r"
+      class="bg-yellow-500 text-white py-2 px-4 rounded-r hover:bg-yellow-600 dark:bg-yellow-400 dark:hover:bg-yellow-500"
     >
       Send
     </button>

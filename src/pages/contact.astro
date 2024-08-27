@@ -9,12 +9,16 @@ import Header from "../components/Header.astro";
     menuPath="/src/assets/burger.png"
     altText="location"
   />
-  <section class="bg-gray-100 py-8">
+  <section class="bg-gray-100 dark:bg-gray-900 py-8">
     <div class="container mx-auto px-4">
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-8">
+      <div
+        class="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden mb-8"
+      >
         <div class="p-6">
-          <h1 class="text-3xl font-bold text-gray-800 mb-4">Contact Us</h1>
-          <p class="text-gray-700 mb-6">
+          <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+            Contact Us
+          </h1>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
             Have questions or want to get in touch? We’d love to hear from you!
             Please fill out the form below or reach out to us through the
             provided contact details.
@@ -22,44 +26,52 @@ import Header from "../components/Header.astro";
 
           <form id="contact-form" class="space-y-4">
             <div class="flex flex-col">
-              <label for="name" class="text-gray-600 font-semibold">Name</label>
+              <label
+                for="name"
+                class="text-gray-600 dark:text-gray-400 font-semibold"
+                >Name</label
+              >
               <input
                 type="text"
                 id="name"
                 name="name"
-                class="border border-gray-300 rounded-lg p-2"
+                class="border border-gray-300 dark:border-gray-700 rounded-lg p-2 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
                 required
               />
             </div>
 
             <div class="flex flex-col">
-              <label for="email" class="text-gray-600 font-semibold"
+              <label
+                for="email"
+                class="text-gray-600 dark:text-gray-400 font-semibold"
                 >Email</label
               >
               <input
                 type="email"
                 id="email"
                 name="email"
-                class="border border-gray-300 rounded-lg p-2"
+                class="border border-gray-300 dark:border-gray-700 rounded-lg p-2 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
                 required
               />
             </div>
 
             <div class="flex flex-col">
-              <label for="message" class="text-gray-600 font-semibold"
+              <label
+                for="message"
+                class="text-gray-600 dark:text-gray-400 font-semibold"
                 >Message</label
               >
               <textarea
                 id="message"
                 name="message"
                 rows="4"
-                class="border border-gray-300 rounded-lg p-2"
+                class="border border-gray-300 dark:border-gray-700 rounded-lg p-2 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
                 required></textarea>
             </div>
 
             <button
               type="submit"
-              class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
+              class="bg-blue-600 dark:bg-blue-500 text-white dark:text-gray-900 py-2 px-4 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-400 transition-colors"
             >
               Send Message
             </button>
@@ -67,33 +79,43 @@ import Header from "../components/Header.astro";
         </div>
       </div>
 
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-8">
+      <div
+        class="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden mb-8"
+      >
         <div class="p-6">
-          <h2 class="text-2xl font-bold text-gray-800 mb-4">
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">
             Our Office Locations
           </h2>
-          <ul class="list-disc list-inside text-gray-700 mb-6">
+          <ul
+            class="list-disc list-inside text-gray-700 dark:text-gray-300 mb-6"
+          >
             <li>123 Main Street, Sana'a City, Yemen</li>
             <li>456 Elm Street, Sana'a City, Yemen</li>
           </ul>
 
-          <h2 class="text-2xl font-bold text-gray-800 mb-4">Follow Us</h2>
+          <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+            Follow Us
+          </h2>
           <div class="flex space-x-4">
             <a
               href="https://github.com/dhiashalabi"
-              class="text-blue-700 hover:text-blue-800">GitHub</a
+              class="text-blue-700 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+              >GitHub</a
             >
             <a
               href="https://facebook.com/dhiashalabi"
-              class="text-blue-600 hover:text-blue-700">Facebook</a
+              class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
+              >Facebook</a
             >
             <a
               href="https://twitter.com/dhiashalabi"
-              class="text-blue-400 hover:text-blue-500">Twitter</a
+              class="text-blue-400 dark:text-blue-300 hover:text-blue-500 dark:hover:text-blue-200"
+              >Twitter</a
             >
             <a
               href="https://linkedin.com/in/dhiashalabi"
-              class="text-blue-700 hover:text-blue-800">LinkedIn</a
+              class="text-blue-700 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+              >LinkedIn</a
             >
           </div>
         </div>
@@ -103,7 +125,7 @@ import Header from "../components/Header.astro";
 
   <div
     id="toast"
-    class="fixed bottom-6 right-6 bg-blue-600 text-white py-2 px-4 rounded-lg shadow-lg opacity-0 transition-opacity duration-300"
+    class="fixed bottom-6 right-6 bg-blue-600 dark:bg-blue-500 text-white dark:text-gray-900 py-2 px-4 rounded-lg shadow-lg opacity-0 transition-opacity duration-300"
   >
     Message sent successfully!
   </div>

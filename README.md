@@ -66,8 +66,16 @@ To get started with this project locally, follow these steps:
 ├── public/
 │   └── favicon.svg
 ├── src/
+│   ├── assets/
+│   │   └── *.png
+│   │   └── *.jpg
 │   ├── components/
-│   │   └── TeamMember.astro
+│   │   └── Chatbox.astro
+│   │   └── Header.astro
+│   │   └── MainContent.astro
+│   ├── data/
+│   │   └── navigation.json
+│   │   └── spaces.json
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── pages/

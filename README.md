@@ -85,10 +85,12 @@ To get started with this project locally, follow these steps:
 └── package.json
 
 - `public/`: Contains static assets like images and favicon.
+- `src/assets/`: Images used in the website.
 - `src/`: Contains the source code for the website.
-- `components/`: Reusable components like `TeamMember`.
-- `layouts/`: Layout components like `Layout` for wrapping pages.
-- `pages/`: Individual pages like `index`, `about`, and `contact`.
+- `src/components/`: Reusable components like `TeamMember`.
+- `src/data/`: JSON data files for navigation and spaces.
+- `src/layouts/`: Layout components like `Layout` for wrapping pages.
+- `src/pages/`: Individual pages like `index`, `about`, and `contact`.
 ```
 
 ### Pages

@@ -59,40 +59,6 @@ To get started with this project locally, follow these steps:
 
 ## Code Overview
 
-### Project Structure
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── assets/
-│   │   └── *.png
-│   │   └── *.jpg
-│   ├── components/
-│   │   └── Chatbox.astro
-│   │   └── Header.astro
-│   │   └── MainContent.astro
-│   ├── data/
-│   │   └── navigation.json
-│   │   └── spaces.json
-│   ├── layouts/
-│   │   └── Layout.astro
-│   ├── pages/
-│   │   ├── index.astro
-│   │   ├── about.astro
-│   │   └── contact.astro
-└── package.json
-
-- `public/`: Contains static assets like images and favicon.
-- `src/assets/`: Images used in the website.
-- `src/`: Contains the source code for the website.
-- `src/components/`: Reusable components like `TeamMember`.
-- `src/data/`: JSON data files for navigation and spaces.
-- `src/layouts/`: Layout components like `Layout` for wrapping pages.
-- `src/pages/`: Individual pages like `index`, `about`, and `contact`.
-```
-
 ### Pages
 
 - Home (index.astro): Displays an overview of the co-working space.

@@ -25,7 +25,7 @@ To get started with this project locally, follow these steps:
 
 1. **Clone the repository**:
 
-   ```sh
+   ```bash title="Terminal"
    git clone https://github.com/yourusername/co-working-space.git
    ```
 
